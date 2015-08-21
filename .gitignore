@@ -1,1 +1,3 @@
-.vagrant
+.vagrant/
+antidote/
+riak_test/
