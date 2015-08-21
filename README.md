@@ -20,4 +20,4 @@ command.
 
 # Problems
 
-Riak has problems when the data of the nodes is on the Virtualbox shared file system. Copy the `dev` or `rel` folder into the VM to run the nodes.
+Riak has problems when the data of the nodes is on the Virtualbox shared file system. Copy the `dev` or `rel` folder into the VM to run the nodes. To solve this issue the `sync-home.sh` script copies the compiled files from `$ANTIDOTE/rel` and `$ANTIDOTE/dev` into a folder called `antidote` in the home-folder of the vagrant user. The scripts `start-cluster.sh` and `start-single.sh` can be used to start these copies.

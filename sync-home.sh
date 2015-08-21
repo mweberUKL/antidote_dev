@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-rsync -av rel/ ~/antidote/rel
-rsync -av dev/ ~/antidote/dev
+rsync -av /vagrant/antidote/rel/ ~/antidote/rel
+rsync -av /vagrant/antidote/dev/ ~/antidote/dev

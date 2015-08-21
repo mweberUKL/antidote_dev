@@ -27,5 +27,7 @@ wget http://cloud.github.com/downloads/basho/rebar/rebar && chmod +x rebar
 git config --global user.email "antidote@example.com"
 git config --global user.name "Antidote Dev"
 
+mkdir /home/vagrant/antidote
+chown vagrant:vagrant /home/vagrant/antidote
 echo 'export REL=$HOME/antidote/rel' >> /home/vagrant/.bashrc
 echo 'export DEV=$HOME/antidote/dev' >> /home/vagrant/.bashrc
