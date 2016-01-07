@@ -24,8 +24,10 @@ wget http://cloud.github.com/downloads/basho/rebar/rebar && chmod +x rebar
 # make
 
 # minimal git configuration with pseudo user
-git config --global user.email "antidote@example.com"
-git config --global user.name "Antidote Dev"
+echo '[user]' >> /home/vagrant/.gitconfig
+echo '    email = antidote@example.com' >> /home/vagrant/.gitconfig
+echo '    name = Antidote Dev' >> /home/vagrant/.gitconfig
+chown vagrant:vagrant /home/vagrant/.gitconfig
 
 mkdir /home/vagrant/antidote
 chown vagrant:vagrant /home/vagrant/antidote
