@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# add aditional repository for erlang
+# echo "deb http://packages.erlang-solutions.com/ubuntu trusty contrib" >> /etc/apt/sources.list
+# wget http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc
+# apt-key add erlang_solutions.asc
+
 apt-get update
 apt-get install -y build-essential libssl-dev libncurses5-dev m4 git
 
@@ -12,9 +17,13 @@ cd otp_src_R16B02/
 make
 make install
 
+# install latest erlang for ubuntu 14.04
+# apt-get install -y erlang
+
 # install rebar
 cd /usr/bin
 wget http://cloud.github.com/downloads/basho/rebar/rebar && chmod +x rebar
+wget https://s3.amazonaws.com/rebar3/rebar3 && chmod +x rebar3
 
 # install rebar templates for riak
 # cd /usr/src
