@@ -1,0 +1,20 @@
+version: '2'
+services:
+  node1:
+    image: mweber/antidote:mweberUKL
+    environment:
+      NODE_NAME: "antidote@node1"
+      SHORT_NAME: "true"
+  node2:
+    image: mweber/antidote:mweberUKL
+    environment:
+      NODE_NAME: "antidote@node2"
+      SHORT_NAME: "true"
+  shell:
+    image: mweber/erlang:R16B02
+    command: /bin/bash
+    depends_on:
+      - node1
+      - node2
+    volumes:
+      - .:/antidote_dev
