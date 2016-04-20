@@ -10,7 +10,7 @@ RUN set -xe \
   && echo 'export REL=$HOME/antidote/rel' >> ~/.bashrc \
   && echo 'export DEV=$HOME/antidote/dev' >> ~/.bashrc
 
-VOLUME /antidote-dev
+VOLUME /antidote_dev
 
 EXPOSE 10017 10018 10019
 EXPOSE 10027 10028 10029

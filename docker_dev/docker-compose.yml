@@ -1,0 +1,6 @@
+version: '2'
+services:
+  shell:
+    image: mweber/antidote-dev:latest
+    volumes:
+      - ..:/antidote_dev
