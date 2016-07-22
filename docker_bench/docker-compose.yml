@@ -2,19 +2,39 @@ version: '2'
 services:
   node1:
     image: mweber/antidote:mweberUKL
+    cap_add:
+      - NET_ADMIN
     environment:
       NODE_NAME: "antidote@node1"
       SHORT_NAME: "true"
+    networks:
+      - interdc
+      - local1
   node2:
     image: mweber/antidote:mweberUKL
+    cap_add:
+      - NET_ADMIN
     environment:
       NODE_NAME: "antidote@node2"
       SHORT_NAME: "true"
+    networks:
+      - interdc
+      - local2
   shell:
     image: mweber/erlang:R16B02
+    cap_add:
+      - NET_ADMIN
     command: /bin/bash
     depends_on:
       - node1
       - node2
     volumes:
       - ..:/antidote_dev
+    networks:
+      - local1
+      - local2
+
+networks:
+  interdc:
+  local1:
+  local2:
