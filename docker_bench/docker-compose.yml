@@ -21,7 +21,7 @@ services:
       - interdc
       - local2
   shell:
-    image: mweber/erlang:R16B02
+    image: erlang:18
     cap_add:
       - NET_ADMIN
     command: /bin/bash
@@ -30,6 +30,7 @@ services:
       - node2
     volumes:
       - ..:/antidote_dev
+      - /Users/mweber/Documents/git/forschung/benches:/benches
     networks:
       - local1
       - local2
