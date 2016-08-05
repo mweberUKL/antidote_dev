@@ -1,0 +1,25 @@
+#!/usr/bin/env escript
+%%! -smp enable -sname tracer -setcookie antidote
+
+main(_Args) ->
+  % trace file "trace.log"
+  ttb:tracer([antidote@node1], {file, "trace"}),
+  % trace all calls
+  ttb:p(all, [c, arity]),
+
+  % what to output
+  %ttb:tp(ets, []),
+  ttb:tpl(materializer_vnode, [{'_', [], [{return_trace}]}]),
+  ttb:tpl(clocksi_materializer, []),
+
+  handle_command(),
+
+  ttb:stop([{format, [{out, "trace.log"}]}]).
+
+handle_command() ->
+  case io:get_line("") of
+    "q\n" ->
+      quit;
+    _ ->
+      handle_command()
+  end.

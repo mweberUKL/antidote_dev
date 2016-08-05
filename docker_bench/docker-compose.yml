@@ -1,7 +1,7 @@
 version: '2'
 services:
   node1:
-    image: mweber/antidote:mweberUKL
+    image: mweber/antidote:dev
     cap_add:
       - NET_ADMIN
     environment:
@@ -11,7 +11,7 @@ services:
       - interdc
       - local1
   node2:
-    image: mweber/antidote:mweberUKL
+    image: mweber/antidote:dev
     cap_add:
       - NET_ADMIN
     environment:
@@ -31,6 +31,17 @@ services:
     volumes:
       - ..:/antidote_dev
       - /Users/mweber/Documents/git/forschung/benches:/benches
+    networks:
+      - local1
+      - local2
+  tracer:
+    image: mweber/erlang:R16B02
+    command: /bin/bash
+    depends_on:
+      - node1
+      - node2
+    volumes:
+      - ..:/antidote_dev
     networks:
       - local1
       - local2
