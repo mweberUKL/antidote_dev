@@ -8,8 +8,8 @@ main(_Args) ->
   ttb:p(all, [c, arity]),
 
   % what to output
-  %ttb:tp(ets, []),
-  ttb:tpl(materializer_vnode, [{'_', [], [{return_trace}]}]),
+  ttb:tp(ets, insert , [{['$1', '$2'], [], [{message, {{'$1', '$2'}}}]}]),
+  ttb:tpl(materializer_vnode, []),
   ttb:tpl(clocksi_materializer, []),
 
   handle_command(),
