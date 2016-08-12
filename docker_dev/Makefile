@@ -1,4 +1,4 @@
 build:
 	docker build -t mweber/antidote-dev:latest .
 shell:
-	docker-compose run shell /bin/bash
+	docker-compose run --rm shell /bin/bash

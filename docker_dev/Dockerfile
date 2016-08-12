@@ -2,8 +2,12 @@ FROM mweber/erlang:R16B02
 
 RUN set -xe \
   && apt-get update \
-  && apt-get install -y --no-install-recommends git \
-  && echo '[user]' > ~/.gitconfig \
+  && apt-get install -y --no-install-recommends git ca-certificates \
+  && useradd -ms /bin/bash -u 501 mweber
+
+USER mweber
+
+RUN echo '[user]' > ~/.gitconfig \
   && echo '    email = antidote@example.com' >> ~/.gitconfig \
   && echo '    name = Antidote Dev' >> ~/.gitconfig \
   && mkdir ~/antidote \
