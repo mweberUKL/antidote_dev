@@ -1,0 +1,22 @@
+version: "2"
+services:
+  antidote1:
+    image: mweber/antidotedb:latest
+    environment:
+      NODE_NAME: "antidote@antidote1"
+      SHORT_NAME: "true"
+
+  antidote2:
+    image: mweber/antidotedb:latest
+    environment:
+      NODE_NAME: "antidote@antidote2"
+      SHORT_NAME: "true"
+
+  link:
+    image: erlang:19
+    volumes:
+      - .:/code
+    command: '/code/link.sh'
+    links:
+      - antidote1
+      - antidote2
