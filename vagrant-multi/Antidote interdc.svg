@@ -29,7 +29,7 @@
      inkscape:cx="467.47448"
      inkscape:cy="780.12621"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1155"
@@ -44,7 +44,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -174,12 +174,13 @@
          id="tspan4227-0"
          x="165.92018"
          y="16.223684"
-         style="stroke-width:0.26458332px">IP: 192.168.50.2</tspan></text>
+         style="stroke-width:0.26458332px">IP: 192.168.50.3</tspan></text>
   </g>
   <g
      inkscape:label="labels"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     sodipodi:insensitive="true">
     <g
        id="g4438">
       <path
@@ -3134,7 +3135,7 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333333px;line-height:125%;font-family:'Gill Sans MT';-inkscape-font-specification:'Gill Sans MT, Normal';font-variant-ligatures:none;font-variant-caps:normal;font-variant-numeric:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:125%;font-family:'Gill Sans MT';-inkscape-font-specification:'Gill Sans MT, Normal';font-variant-ligatures:none;font-variant-caps:normal;font-variant-numeric:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="125.66875"
        y="136.64301"
        id="text6073"
@@ -3143,7 +3144,7 @@
          id="tspan6075"
          x="125.66875"
          y="136.64301"
-         style="stroke-width:0.26458332px;-inkscape-font-specification:'Gill Sans MT, Normal';font-family:'Gill Sans MT';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:4.23333333px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%;font-variant-ligatures:none;font-variant-caps:normal;font-variant-numeric:normal;">epmd</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:125%;font-family:'Gill Sans MT';-inkscape-font-specification:'Gill Sans MT, Normal';font-variant-ligatures:none;font-variant-caps:normal;font-variant-numeric:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332px">epmd</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text6085"
