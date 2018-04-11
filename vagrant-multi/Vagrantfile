@@ -1,0 +1,62 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+Vagrant.configure("2") do |config|
+
+  config.vm.define "antidote1" do |aconf|
+    aconf.vm.box = "ubuntu/xenial64"
+    aconf.vm.hostname = "antidote1"
+    aconf.vm.network "private_network", ip: "192.168.50.2"
+
+    aconf.vm.provider "virtualbox" do |vb|
+      # Display the VirtualBox GUI when booting the machine
+      # vb.gui = true
+
+      # Antidote needs at least 2 CPU cores
+      vb.cpus = 2
+      # Customize the amount of memory on the VM:
+      vb.memory = "2048"
+    end
+
+    aconf.vm.provision "shell",
+      inline: "echo '192.168.50.3 antidote2' >> /etc/hosts"
+
+    aconf.vm.provision "docker" do |d|
+      d.pull_images "antidotedb/antidote"
+      d.run "antidote",
+        image: "antidotedb/antidote",
+        args: "-p 9100:9100 -p 4369:4369 -p 8085:8085 -p 8086:8086 -p 8087:8087 -e NODE_NAME=antidote@192.168.50.2"
+    end
+  end
+
+  config.vm.define "antidote2" do |aconf|
+    aconf.vm.box = "ubuntu/xenial64"
+    aconf.vm.hostname = "antidote2"
+    aconf.vm.network "private_network", ip: "192.168.50.3"
+
+    aconf.vm.provider "virtualbox" do |vb|
+      # Display the VirtualBox GUI when booting the machine
+      # vb.gui = true
+
+      # Antidote needs at least 2 CPU cores
+      vb.cpus = 2
+      # Customize the amount of memory on the VM:
+      vb.memory = "2048"
+    end
+
+    aconf.vm.provision "shell",
+      inline: "echo '192.168.50.2 antidote1' >> /etc/hosts"
+
+    aconf.vm.provision "docker" do |d|
+      d.pull_images "antidotedb/antidote"
+      d.run "antidote",
+        image: "antidotedb/antidote",
+        args: "-p 9100:9100 -p 4369:4369 -p 8085:8085 -p 8086:8086 -p 8087:8087 -e NODE_NAME=antidote@192.168.50.3"
+    end
+  end
+
+end
